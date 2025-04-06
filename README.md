@@ -2,7 +2,7 @@
 - 👀 I’m interested in Rust and Security
 - 🌱 I’m currently learning Rust From Scratch 
 - 💞️ I’m looking to collaborate on Rust to Build Some cools Stuff
--  # Open for a Job
+   ## Open for a Job 👀
 - 📫 How to reach me birukafeworkmengesha@gmail.com or [Website 
 ](https://birukafework.github.io/)
 - <div id="badges">
