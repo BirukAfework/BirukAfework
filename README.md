@@ -2,9 +2,9 @@
 - 👀 I’m interested in Rust and Security
 - 🌱 I’m currently learning Rust From Scratch 
 - 💞️ I’m looking to collaborate on Rust to Build Some cools Stuff
+-  I love Coffee [Buy Me A Coffee](https://buymeacoffee.com/birukafework)
    ## Open for a Job 👀
-- 📫 How to reach me birukafeworkmengesha@gmail.com or [Website 
-](https://birukafework.github.io/)
+- 📫 How to reach me birukafeworkmengesha@gmail.com or [Website ](https://birukafework.github.io/)
 - <div id="badges">
   <a href="https://et.linkedin.com/in/birukafework">
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
