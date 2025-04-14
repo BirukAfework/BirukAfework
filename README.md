@@ -3,8 +3,7 @@
 - 👀 I’m interested in Rust and Security
 - 🌱 I’m currently learning Rust From Scratch 
 - 💞️ I’m looking to collaborate on Rust to Build Some cools Stuff
--  I love Coffee [Buy Me A Coffee](https://buymeacoffee.com/birukafework)
-   ## Open for a Job 👀
+ ## Social Links
 - 📫 How to reach me birukafeworkmengesha@gmail.com or [Website ](https://birukafework.github.io/)
 <div class="social-badges">
   <a href="https://et.linkedin.com/in/birukafework" target="_blank">
@@ -21,8 +20,8 @@
   </a>
 </div>
  
-<!--
-## Language & Framework Badges
+
+## Tech Stack
 Showcasing the technologies I work with: Flutter, PHP, Python, Rust, Bootstrap, and Actix.
 
 <div class="language-badges">
