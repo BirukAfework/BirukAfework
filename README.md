@@ -27,7 +27,6 @@
  
 
 ## Tech Stack
-Showcasing the technologies I work with: Flutter, PHP, Python, Rust, Bootstrap, and Actix.
 
 <div class="language-badges">
   <a href="https://flutter.dev/" target="_blank">
