@@ -4,8 +4,13 @@
 - 🌱 I’m currently learning Rust From Scratch 
 - 💞️ I’m looking to collaborate on Rust to Build Some cools Stuff
  ## Social Links
-- 📫 How to reach me birukafeworkmengesha@gmail.com or [Website ](https://birukafework.github.io/)
 <div class="social-badges">
+  <a href="mailto:birukafeworkmengesha@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=D14836" alt="Email Badge" class="badge"/>
+  </a>
+  <a href="https://birukafework.github.io/" target="_blank">
+    <img src="https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=firefox&logoColor=white&labelColor=000000" alt="Website Badge" class="badge"/>
+  </a>
   <a href="https://et.linkedin.com/in/birukafework" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0A66C2" alt="LinkedIn Badge" class="badge"/>
   </a>
@@ -44,4 +49,4 @@ Showcasing the technologies I work with: Flutter, PHP, Python, Rust, Bootstrap, 
     <img src="https://img.shields.io/badge/Actix-4A4A4A?style=for-the-badge&logo=rust&logoColor=DE3423&labelColor=4A4A4A" alt="Actix Badge" class="badge"/>
   </a>
 </div>
--->
+
