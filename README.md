@@ -1,5 +1,5 @@
 - 👋 Hi, I’m Biruk Afework
-- Software Developer | Rust & Security Enthusiast
+- Developer | Rust & Security Enthusiast
 - 👀 I’m interested in Rust and Security
 - 🌱 I’m currently learning Rust From Scratch 
 - 💞️ I’m looking to collaborate on Rust to Build Some cools Stuff
