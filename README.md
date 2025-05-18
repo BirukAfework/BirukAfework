@@ -38,7 +38,7 @@
   <a href="https://www.python.org/" target="_blank">
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=FFD43B&labelColor=3776AB" alt="Python Badge" class="badge"/>
   </a>
-  <a href="https://www.rust-lang.org/" target="_blank">
+  <a href="https://github.com/BirukAfework/Rust-Days.git" target="_blank">
     <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white&labelColor=000000" alt="Rust Badge" class="badge"/>
   </a>
   <a href="https://getbootstrap.com/" target="_blank">
