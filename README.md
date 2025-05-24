@@ -44,7 +44,7 @@
   <a href="https://getbootstrap.com/" target="_blank">
     <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white&labelColor=7952B3" alt="Bootstrap Badge" class="badge"/>
   </a>
-  <a href="https://actix.rs/" target="_blank">
+  <a href="https://github.com/BirukAfework/Learn-Actix.git" target="_blank">
     <img src="https://img.shields.io/badge/Actix-4A4A4A?style=for-the-badge&logo=rust&logoColor=DE3423&labelColor=4A4A4A" alt="Actix Badge" class="badge"/>
   </a>
 </div>
