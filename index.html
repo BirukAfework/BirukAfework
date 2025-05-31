@@ -1,183 +1,1307 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevSec Solutions - Developer & Pentester</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-            color: #e2e8f0;
-        }
-        .glow-on-hover {
-            transition: all 0.3s ease;
-        }
-        .glow-on-hover:hover {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-            transform: translateY(-2px);
-        }
-        .scroll-smooth {
-            scroll-behavior: smooth;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Biruk Afework - Programmer & Pentester</title>
+  <meta name="description" content="Portfolio of Biruk Afework, a skilled programmer and penetration tester specializing in Python, Rust, PHP, cybersecurity, and ethical hacking.">
+  <meta name="keywords" content="Biruk Afework, programmer, pentester, Python, Rust, Actix, PHP, cybersecurity, Nmap, Metasploit, Burp Suite, ethical hacking">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    /* Fonts */
+    :root {
+      --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      --heading-font: "Nunito Sans", sans-serif;
+      --nav-font: "Raleway", sans-serif;
+    }
+
+    /* Global Colors */
+    :root {
+      --background-color: #031119;
+      --default-color: rgba(255, 255, 255, 0.8);
+      --heading-color: #e0e9f2;
+      --accent-color: #e3a127;
+      --surface-color: #1b262c;
+      --contrast-color: #ffffff;
+      --github: #181717;
+      --linkedin: #0a66c2;
+      --twitter: #000000;
+      --hackthebox: #9fef00;
+      --telegram: #229ED9;
+      --facebook: #1877f3;
+      --instagram: #E4405F;
+      --email: #EA4335;
+    }
+
+    /* Nav Menu Colors */
+    :root {
+      --nav-color: rgba(255, 255, 255, 0.8);
+      --nav-hover-color: #e3a127;
+      --nav-mobile-background-color: #29343a;
+      --nav-dropdown-background-color: #29343a;
+      --nav-dropdown-color: rgba(255, 255, 255, 0.8);
+      --nav-dropdown-hover-color: #e3a127;
+    }
+
+    /* Color Presets */
+    .light-background {
+      --background-color: #0d1d26;
+      --surface-color: #16262f;
+    }
+
+    .dark-background {
+      --background-color: #060606;
+      --default-color: #ffffff;
+      --heading-color: #ffffff;
+      --surface-color: #252525;
+      --contrast-color: #ffffff;
+    }
+
+    /* Smooth Scroll */
+    :root {
+      scroll-behavior: smooth;
+    }
+
+    /* General Styling */
+    body {
+      color: var(--default-color);
+      background-color: var(--background-color);
+      font-family: var(--default-font);
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: color-mix(in srgb, var(--accent-color), transparent 25%);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--heading-color);
+      font-family: var(--heading-font);
+    }
+
+    /* Header */
+    .header {
+      color: var(--default-color);
+      background-color: rgba(255, 255, 255, 0);
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 997;
+      transition: all 0.5s;
+    }
+
+    .header .header-container {
+      background: var(--surface-color);
+      border-radius: 50px;
+      padding: 5px 25px;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header .logo h1 {
+      font-size: 20px;
+      margin: 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .header .btn-getstarted {
+      color: var(--contrast-color);
+      background: var(--accent-color);
+      font-size: 14px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      transition: 0.3s;
+    }
+
+    .header .btn-getstarted:hover {
+      background: color-mix(in srgb, var(--accent-color), transparent 15%);
+    }
+
+    /* Navigation Menu */
+    .navmenu ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navmenu a {
+      color: var(--nav-color);
+      padding: 18px 15px;
+      font-size: 16px;
+      font-family: var(--nav-font);
+      font-weight: 400;
+      transition: 0.3s;
+    }
+
+    .navmenu a:hover, .navmenu .active {
+      color: var(--nav-hover-color);
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      color: var(--nav-color);
+      font-size: 28px;
+      cursor: pointer;
+      line-height: 0;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 1199px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      .navmenu ul {
+        display: none;
+        position: fixed;
+        inset: 60px 20px 20px 20px;
+        padding: 10px 0;
+        background-color: var(--nav-mobile-background-color);
+        border-radius: 6px;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+        z-index: 9998;
+        flex-direction: column;
+        overflow-y: auto;
+      }
+
+      .navmenu ul.show {
+        display: flex;
+      }
+
+      .navmenu a {
+        color: var(--nav-dropdown-color);
+        padding: 10px 20px;
+        font-family: var(--nav-font);
+        font-size: 17px;
+        font-weight: 500;
+      }
+
+      .navmenu a:hover, .navmenu .active {
+        color: var(--nav-dropdown-hover-color);
+      }
+
+      .mobile-nav-active .mobile-nav-toggle {
+        color: #fff;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+      }
+
+      .mobile-nav-active .navmenu {
+        background: rgba(33, 37, 41, 0.8);
+        inset: 0;
+      }
+    }
+
+    /* Global Sections */
+    section {
+      color: var(--default-color);
+      background-color: var(--background-color);
+      padding: 60px 0;
+      scroll-margin-top: 90px;
+    }
+
+    @media (max-width: 1199px) {
+      section {
+        scroll-margin-top: 66px;
+      }
+    }
+
+    /* Section Titles */
+    .section-title {
+      padding-bottom: 60px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: color-mix(in srgb, var(--default-color), transparent 50%);
+    }
+
+    .section-title h2::after {
+      content: "";
+      width: 120px;
+      height: 1px;
+      display: inline-block;
+      background: var(--accent-color);
+      margin: 4px 10px;
+    }
+
+    .section-title div {
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 10px);
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero .content-col h5 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--contrast-color);
+    }
+
+    .hero .main-heading h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .hero .divider {
+      width: 60%;
+      height: 1px;
+      background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+      margin: 2rem 0;
+    }
+
+    .hero .description p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+    }
+
+    .hero .cta-button .btn {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--accent-color);
+      border: none;
+      color: var(--contrast-color);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .hero .cta-button .btn:hover {
+      background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+    }
+
+    .hero .stats-card {
+      background-color: color-mix(in srgb, var(--surface-color), transparent 50%);
+      backdrop-filter: blur(10px);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      border-radius: 10px;
+      padding: 1.5rem;
+      width: 200px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero .stats-card h2 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .hero .stats-card p {
+      font-size: 0.9rem;
+      margin: 0.5rem 0 0;
+    }
+
+    .hero .stats-card a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background-color: var(--accent-color);
+      border-radius: 50%;
+      color: var(--contrast-color);
+      font-size: 1rem;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+    }
+
+    @media (max-width: 991px) {
+      .hero .stats-card {
+        width: 90%;
+        margin-top: 2rem;
+      }
+
+      .hero .main-heading h1 {
+        font-size: 3rem;
+      }
+    }
+
+    /* About Section */
+    .about .about-image {
+      position: relative;
+    }
+
+    .about .about-image img {
+      border-radius: 8px;
+    }
+
+    .about .about-image .experience-badge {
+      position: absolute;
+      bottom: 30px;
+      right: -30px;
+      background: var(--accent-color);
+      color: var(--contrast-color);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 140px;
+    }
+
+    .about .about-image .experience-badge .years {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .about .about-image .experience-badge .text {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .about .about-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .about .about-content .lead {
+      font-size: 1.15rem;
+      color: color-mix(in srgb, var(--heading-color), transparent 30%);
+    }
+
+    .about .about-content .skills-list {
+      background-color: var(--surface-color);
+      padding: 1.25rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .about .about-content .skills-list:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .about .about-content .skills-list h5 {
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .about .about-content .skills-list ul li {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .about .about-content .skills-list ul li i {
+      color: var(--accent-color);
+      margin-right: 10px;
+      font-size: 1.1rem;
+    }
+
+    .about .about-content .btn-primary {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      color: var(--contrast-color);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+    }
+
+    .about .about-content .btn-primary:hover {
+      background-color: color-mix(in srgb, var(--accent-color), black 10%);
+    }
+
+    /* CV Section */
+    .cv .cv-card {
+      background-color: var(--surface-color);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .cv .cv-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .cv .cv-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .cv .cv-card .btn-download {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .cv .cv-card .btn-download:hover {
+      background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+    }
+
+    .cv .cv-card .timeline-item {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 20px;
+    }
+
+    .cv .cv-card .timeline-item:before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--accent-color);
+    }
+
+    .cv .cv-card .timeline-item .marker {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background-color: var(--accent-color);
+      border-radius: 50%;
+    }
+
+    .cv .cv-card .timeline-item h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .cv .cv-card .timeline-item p {
+      font-size: 0.9rem;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+    }
+
+    /* Services Section */
+    .services .service-card {
+      background-color: var(--surface-color);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .services .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .services .service-card .service-icon {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 15px;
+    }
+
+    .services .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .services .service-card p {
+      font-size: 0.9rem;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+    }
+
+    /* Portfolio Section */
+    .portfolio .portfolio-item {
+      background-color: var(--surface-color);
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .portfolio .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .portfolio .portfolio-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .portfolio .portfolio-item .portfolio-content {
+      padding: 15px;
+    }
+
+    .portfolio .portfolio-item .portfolio-content h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .portfolio .portfolio-item .portfolio-content .portfolio-meta {
+      font-size: 0.9rem;
+      color: var(--accent-color);
+    }
+
+    /* Contact Section */
+    .contact .contact-info-box {
+      background-color: var(--surface-color);
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+      padding: 25px;
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .contact .contact-info-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact .contact-info-box .icon-box {
+      background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+      color: var(--accent-color);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact .contact-info-box .icon-box i {
+      font-size: 24px;
+    }
+
+    .contact .contact-info-box .info-content h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .contact .contact-info-box .info-content p a {
+      color: var(--default-color);
+    }
+
+    .contact .contact-info-box .info-content p a:hover {
+      color: var(--accent-color);
+    }
+
+    .contact .contact-info-box.github .icon-box { background-color: var(--github); color: #fff; }
+    .contact .contact-info-box.linkedin .icon-box { background-color: var(--linkedin); color: #fff; }
+    .contact .contact-info-box.twitter .icon-box { background-color: var(--twitter); color: #fff; }
+    .contact .contact-info-box.hackthebox .icon-box { background-color: var(--hackthebox); color: #000; }
+    .contact .contact-info-box.telegram .icon-box { background-color: var(--telegram); color: #fff; }
+    .contact .contact-info-box.facebook .icon-box { background-color: var(--facebook); color: #fff; }
+    .contact .contact-info-box.instagram .icon-box { background-color: var(--instagram); color: #fff; }
+    .contact .contact-info-box.email .icon-box { background-color: var(--email); color: #fff; }
+
+    /* Modal Styling */
+    .modal-content {
+      background-color: var(--surface-color);
+      border: 1px solid var(--accent-color);
+      color: var(--default-color);
+    }
+
+    .modal-header {
+      border-bottom: 1px solid var(--accent-color);
+    }
+
+    .modal-title {
+      color: var(--heading-color);
+    }
+
+    .modal-body img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .modal-body p {
+      font-size: 1rem;
+    }
+
+    .modal-footer {
+      border-top: 1px solid var(--accent-color);
+    }
+
+    /* Footer */
+    .footer {
+      color: var(--default-color);
+      background-color: var(--background-color);
+      font-size: 14px;
+      padding-bottom: 50px;
+    }
+
+    .footer .footer-top {
+      padding-top: 50px;
+      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    }
+
+    .footer .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+      color: color-mix(in srgb, var(--default-color), transparent 50%);
+      margin-right: 10px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .footer .social-links a:hover {
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+
+    .footer h4 {
+      font-size: 16px;
+      font-weight: bold;
+      padding-bottom: 12px;
+    }
+
+    .footer .footer-links ul li {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer .footer-links ul a {
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+    }
+
+    .footer .footer-links ul a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer .copyright {
+      padding: 25px 0;
+      background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+    }
+
+    .footer .credits {
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: var(--background-color);
+      transition: all 0.6s ease-out;
+    }
+
+    #preloader:before {
+      content: "";
+      position: fixed;
+      top: calc(50% - 30px);
+      left: calc(50% - 30px);
+      border: 6px solid #ffffff;
+      border-color: var(--accent-color) transparent var(--accent-color) transparent;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: animate-preloader 1.5s linear infinite;
+    }
+
+    @keyframes animate-preloader {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Scroll Top */
+    .scroll-top {
+      position: fixed;
+      visibility: hidden;
+      opacity: 0;
+      right: 15px;
+      bottom: 15px;
+      z-index: 99999;
+      background-color: var(--accent-color);
+      width: 44px;
+      height: 44px;
+      border-radius: 50px;
+      transition: all 0.4s;
+    }
+
+    .scroll-top i {
+      font-size: 24px;
+      color: var(--contrast-color);
+      line-height: 0;
+    }
+
+    .scroll-top:hover {
+      background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+    }
+
+    .scroll-top.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero .main-heading h1 {
+        font-size: 2.5rem;
+      }
+
+      .about .about-image .experience-badge {
+        right: 0;
+        bottom: 20px;
+        padding: 1rem;
+        min-width: 120px;
+      }
+
+      .about .about-image .experience-badge .years {
+        font-size: 2rem;
+      }
+
+      .portfolio .portfolio-item img {
+        height: 180px;
+      }
+
+      .cv .cv-card {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
-<body class="scroll-smooth">
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-md z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-400">DevSec Solutions</a>
-            <div class="space-x-4">
-                <a href="#home" class="text-gray-300 hover:text-blue-400 transition">Home</a>
-                <a href="#services" class="text-gray-300 hover:text-blue-400 transition">Services</a>
-                <a href="#about" class="text-gray-300 hover:text-blue-400 transition">About</a>
-                <a href="#portfolio" class="text-gray-300 hover:text-blue-400 transition">Portfolio</a>
-                <a href="#contact" class="text-gray-300 hover:text-blue-400 transition">Contact</a>
-            </div>
-        </div>
-    </nav>
 
+<body class="index-page">
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container header-container">
+      <div class="logo">
+        <h1>Biruk Afework</h1>
+      </div>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle bi bi-list"></i>
+      </nav>
+      <a class="btn-getstarted" href="#cv">Download CV</a>
+    </div>
+  </header>
+
+  <main>
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-16">
-        <div class="text-center max-w-3xl mx-auto px-4">
-            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
-                Empowering Security & Innovation
-            </h1>
-            <p class="mt-4 text-lg text-gray-400">
-                Expert Development and Penetration Testing Services for a Secure Digital Future
-            </p>
-            <a href="#contact" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg glow-on-hover">
-                Get Started
-            </a>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-gray-900 rounded-lg glow-on-hover">
-                    <h3 class="text-xl font-semibold mb-4">Web Development</h3>
-                    <p class="text-gray-400">
-                        Building secure, scalable, and high-performance web applications tailored to your needs.
-                    </p>
-                </div>
-                <div class="p-6 bg-gray-900 rounded-lg glow-on-hover">
-                    <h3 class="text-xl font-semibold mb-4">Penetration Testing</h3>
-                    <p class="text-gray-400">
-                        Comprehensive security assessments to identify and mitigate vulnerabilities in your systems.
-                    </p>
-                </div>
-                <div class="p-6 bg-gray-900 rounded-lg glow-on-hover">
-                    <h3 class="text-xl font-semibold mb-4">Consulting & Training</h3>
-                    <p class="text-gray-400">
-                        Expert guidance and training to empower your team with secure coding and pentesting skills.
-                    </p>
-                </div>
+    <section id="home" class="hero section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 content-col" data-aos="fade-up">
+            <div class="agency-name">
+              <h5>BIRUK AFEWORK</h5>
             </div>
+            <div class="main-heading">
+              <h1>PROGRAMMER & PENTESTER</h1>
+            </div>
+            <div class="divider"></div>
+            <div class="description">
+              <p>Building secure and innovative digital solutions with expertise in Python, Rust, and cybersecurity tools like Nmap, Metasploit, and Burp Suite.</p>
+            </div>
+            <div class="cta-button">
+              <a href="#portfolio" class="btn"><span>EXPLORE MY WORK</span> <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-5" data-aos="zoom-out">
+            <!-- <img src="g" alt="Cybersecurity Abstract" class="img-fluid"> -->
+           
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12">About Us</h2>
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <div class="md:w-1/2">
-                    <p class="text-gray-400 leading-relaxed">
-                        At DevSec Solutions, we combine cutting-edge development with robust security practices. Our team of experienced developers and certified pentesters is dedicated to delivering secure, high-quality solutions that drive innovation and protect your digital assets.
-                    </p>
-                    <p class="mt-4 text-gray-400 leading-relaxed">
-                        With a passion for technology and a commitment to excellence, we help businesses thrive in a secure and connected world.
-                    </p>
-                </div>
-                <div class="md:w-1/2">
-                    <div class="bg-gray-900 p-6 rounded-lg glow-on-hover">
-                        <h3 class="text-xl font-semibold mb-4">Our Mission</h3>
-                        <p class="text-gray-400">
-                            To empower businesses with secure, innovative, and reliable technology solutions.
-                        </p>
-                    </div>
-                </div>
+    <section id="about" class="about section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>ABOUT</h2>
+        <div>Learn More About Me</div>
+      </div>
+      <div class="container">
+        <div class="row gx-0 align-items-center">
+          <div class="col-lg-6 about-image" data-aos="fade-right">
+            <img src="pro.jpg" class="img-fluid" alt="Biruk Afework">
+           
+          </div>
+          <div class="col-lg-6 about-content" data-aos="fade-left">
+            <h2>Delivering Secure and Scalable Solutions</h2>
+            <p class="lead">I’m Biruk Afework, a skilled programmer and certified penetration tester with over 5 years of experience in building secure applications and conducting ethical hacking.</p>
+            <p>Proficient in <strong>Python, Rust (Actix), PHP, and Bootstrap</strong>, I develop high-performance web applications and APIs. My cybersecurity expertise includes tools like <strong>Nmap, Metasploit, and Burp Suite</strong>, with certifications in CEH and OSCP.</p>
+            <div class="skills-list">
+              <h5>Technical Skills</h5>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check-circle"></i> <strong>Programming:</strong> Python, Rust, PHP, JavaScript</li>
+                <li><i class="bi bi-check-circle"></i> <strong>Web Frameworks:</strong> Django, Flask, Actix-Web, Bootstrap</li>
+                <li><i class="bi bi-check-circle"></i> <strong>Cybersecurity Tools:</strong> Nmap, Metasploit, Burp Suite</li>
+                <li><i class="bi bi-check-circle"></i> <strong>Certifications:</strong> CEH, OSCP</li>
+              </ul>
             </div>
+            <a href="#cv" class="btn btn-primary mt-2">View My CV</a>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="cv section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>CV</h2>
+        <div>My Professional Journey</div>
+      </div>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="cv-card">
+              <h3>Experience</h3>
+              <div class="timeline-item">
+                <div class="marker"></div>
+                <h4>Buna Tech</h4>
+                <p><strong>CEO & Chief Programmer | 2022 - 2025</strong><br>
+                  Led development of innovative tech solutions.<br>
+                  Oversaw cybersecurity initiatives and software engineering projects.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <div class="marker"></div>
+                <h4>Alpha Technology Solutions</h4>
+                <p><strong>Penetration Tester & Front-End Developer | 2023 - 2024</strong><br>
+                  Conducted security assessments and penetration testing.<br>
+                  Built responsive and secure front-end interfaces.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <div class="marker"></div>
+                <h4>DK Delivery A.A</h4>
+                <p><strong>Remote Developer | 2022 - 2023</strong><br>
+                  Developed and maintained scalable applications remotely.<br>
+                  Collaborated with teams to optimize delivery systems.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <div class="marker"></div>
+                <h4>CTF Player</h4>
+              </div>
+              <div class="timeline-item">
+                <div class="marker"></div>
+                <h4>More Experiences</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="cv-card">
+              <h3>Education & Certifications</h3>
+              <div class="timeline-item">
+                <div class="marker"></div>
+                <h4>BSc Computer Science | Addis Ababa University</h4>
+                <p>2016 - 2020</p>
+              </div>
+              <div class="timeline-item">
+                <div class="marker"></div>
+                <h4>Certified Ethical Hacker (CEH)</h4>
+                <p>2021</p>
+              </div>
+              <div class="timeline-item">
+                <div class="marker"></div>
+                <h4>Offensive Security Certified Professional (OSCP)</h4>
+                <p>2022</p>
+              </div>
+              <div class="timeline-item">
+                <div class="marker"></div>
+                <h4>Cisco Python PCAP</h4>
+                <p>Cisco Networking Academy</p>
+              </div>
+              <div class="timeline-item">
+                <div class="marker"></div>
+                <h4>Udemy - Ethical Hacking</h4>
+                <p>Hands-on training in penetration testing and security practices</p>
+              </div>
+              <div class="timeline-item">
+                <div class="marker"></div>
+                <h4>Udemy - Rust Programming</h4>
+                <p>Mastered systems programming with Rust</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-delay="300">
+            <a href="Biruk_CV.pdf" class="btn btn-download" download>Download CV <i class="bi bi-download ms-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /CV Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <div>My Expertise</div>
+      </div>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card">
+              <div class="service-icon"><i class="bi bi-code-slash"></i></div>
+              <h3>Web Development</h3>
+              <p>Building responsive web applications using Python, Rust, PHP, and Bootstrap.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="service-icon"><i class="bi bi-shield-lock"></i></div>
+              <h3>Penetration Testing</h3>
+              <p>Conducting security assessments with Nmap, Metasploit, and Burp Suite.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              <div class="service-icon"><i class="bi bi-git"></i></div>
+              <h3>Open Source</h3>
+              <p>Developing tools like a Rust-based password cracker and C2 framework.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12">Our Portfolio</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-900 rounded-lg overflow-hidden glow-on-hover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Secure E-Commerce Platform</h3>
-                        <p class="text-gray-400">
-                            Developed a robust e-commerce solution with integrated security features and seamless user experience.
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-gray-900 rounded-lg overflow-hidden glow-on-hover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Network Security Audit</h3>
-                        <p class="text-gray-400">
-                            Conducted a comprehensive pentest for a financial institution, identifying critical vulnerabilities.
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-gray-900 rounded-lg overflow-hidden glow-on-hover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Custom API Development</h3>
-                        <p class="text-gray-400">
-                            Built a secure, scalable API for a SaaS platform, ensuring high performance and reliability.
-                        </p>
-                    </div>
-                </div>
+    <section id="portfolio" class="portfolio section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <div>Explore My Projects</div>
+      </div>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Secure Web Application" data-description="A full-stack web app built with Rust (Actix) and Bootstrap, featuring secure authentication and responsive design." data-image="assets/img/portfolio/portfolio-11.webp" data-link="https://github.com/birukafework">
+              <img src="assets/img/portfolio/portfolio-11.webp" class="img-fluid" alt="Secure Web App">
+              <div class="portfolio-content">
+                <div class="portfolio-meta">Web Development</div>
+                <h3>Secure Web Application</h3>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="E-Commerce Security Audit" data-description="Security audit using Nmap, Metasploit, and Burp Suite to secure an e-commerce platform." data-image="https://via.placeholder.com/400x250?text=Pentest+Audit" data-link="#">
+              <img src="https://via.placeholder.com/400x250?text=Pentest+Audit" class="img-fluid" alt="E-Commerce Security Audit">
+              <div class="portfolio-content">
+                <div class="portfolio-meta">Penetration Testing</div>
+                <h3>E-Commerce Security Audit</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Rust Password Cracker" data-description="A high-performance password cracker built in Rust for security testing." data-image="https://via.placeholder.com/400x250?text=Password+Cracker" data-link="https://github.com/birukafework/rust-cracker">
+              <img src="https://via.placeholder.com/400x250?text=Password+Cracker" class="img-fluid" alt="Rust Password Cracker">
+              <div class="portfolio-content">
+                <div class="portfolio-meta">Open Source</div>
+                <h3>Rust Password Cracker</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Rust C2 Framework" data-description="A command-and-control framework built in Rust for red team operations." data-image="https://via.placeholder.com/400x250?text=C2+Framework" data-link="https://github.com/birukafework/c2-framework">
+              <img src="https://via.placeholder.com/400x250?text=C2+Framework" class="img-fluid" alt="Rust C2 Framework">
+              <div class="portfolio-content">
+                <div class="portfolio-meta">Open Source</div>
+                <h3>Rust C2 Framework</h3>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12">Get in Touch</h2>
-            <div class="max-w-lg mx-auto">
-                <p class="text-gray-400 mb-6 text-center">
-                    Ready to secure your digital future? Contact us today!
-                </p>
-                <div class="bg-gray-900 p-6 rounded-lg glow-on-hover">
-                    <p class="text-gray-400">
-                        Email: <a href="mailto:contact@devsec.solutions" class="text-blue-400 hover:underline">contact@devsec.solutions</a>
-                    </p>
-                    <p class="text-gray-400 mt-2">
-                        Phone: <a href="tel:+1234567890" class="text-blue-400 hover:underline">+1 (234) 567-890</a>
-                    </p>
-                    <p class="text-gray-400 mt-2">
-                        Follow us on <a href="https://x.com/devsecsolutions" class="text-blue-400 hover:underline">X</a>
-                    </p>
-                </div>
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <div>Let's Connect</div>
+      </div>
+      <div class="container">
+        <div class="row gy-4">
+          <!-- LinkedIn -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-info-box linkedin">
+              <div class="icon-box"><i class="bi bi-linkedin"></i></div>
+              <div class="info-content">
+                <h4>LinkedIn</h4>
+                <p><a href="https://linkedin.com/in/birukafework" target="_blank">birukafework</a></p>
+              </div>
             </div>
+          </div>
+          <!-- GitHub -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="contact-info-box github">
+              <div class="icon-box"><i class="bi bi-github"></i></div>
+              <div class="info-content">
+                <h4>GitHub</h4>
+                <p><a href="https://github.com/birukafework" target="_blank">birukafework</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- LeetCode -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="contact-info-box">
+              <div class="icon-box"><i class="bi bi-code-slash"></i></div>
+              <div class="info-content">
+                <h4>LeetCode</h4>
+                <p><a href="https://leetcode.com/birukafework" target="_blank">birukafework</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Twitter/X -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="contact-info-box twitter">
+              <div class="icon-box"><i class="bi bi-twitter-x"></i></div>
+              <div class="info-content">
+                <h4>Twitter/X</h4>
+                <p><a href="https://twitter.com/birukafework" target="_blank">birukafework</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Telegram -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="contact-info-box telegram">
+              <div class="icon-box"><i class="bi bi-telegram"></i></div>
+              <div class="info-content">
+                <h4>Telegram</h4>
+                <p><a href="https://t.me/birukafework" target="_blank">@birukafework</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Facebook -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
+            <div class="contact-info-box facebook">
+              <div class="icon-box"><i class="bi bi-facebook"></i></div>
+              <div class="info-content">
+                <h4>Facebook</h4>
+                <p><a href="https://facebook.com/birukafework" target="_blank">birukafework</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Instagram -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="contact-info-box instagram">
+              <div class="icon-box"><i class="bi bi-instagram"></i></div>
+              <div class="info-content">
+                <h4>Instagram</h4>
+                <p><a href="https://instagram.com/birukafework" target="_blank">@birukafework</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="450">
+            <div class="contact-info-box email">
+              <div class="icon-box"><i class="bi bi-envelope"></i></div>
+              <div class="info-content">
+                <h4>Email</h4>
+                <p><a href="mailto:biruk@example.com">biruk@example.com</a></p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
-            <p>&copy; 2025 DevSec Solutions. All rights reserved.</p>
+    <!-- Project Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModalLabel"></h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img id="modalImage" src="" alt="Project Image" class="img-fluid">
+            <p id="modalDescription"></p>
+          </div>
+          <div class="modal-footer">
+            <a id="modalLink" href="#" class="btn btn-primary" target="_blank">View Project</a>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </main>
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo"><span>Biruk Afework</span></a>
+          <p>Passionate about building secure, innovative solutions.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://github.com/birukafework"><i class="bi bi-github"></i></a>
+            <a href="https://linkedin.com/in/birukafework"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/birukafework"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.hackthebox.eu/profile/birukafework"><i class="bi bi-shield-lock"></i></a>
+          </div>
+        </div>
+        
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Custom JS -->
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Mobile Nav Toggle
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('.navmenu ul');
+    mobileNavToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('show');
+      document.body.classList.toggle('mobile-nav-active');
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
+    });
+
+    // Close mobile nav when clicking a link
+    document.querySelectorAll('.navmenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('show')) {
+          navMenu.classList.remove('show');
+          document.body.classList.remove('mobile-nav-active');
+          mobileNavToggle.classList.add('bi-list');
+          mobileNavToggle.classList.remove('bi-x');
+        }
+      });
+    });
+
+    // Highlight active nav link
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      document.querySelectorAll('.navmenu a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Portfolio Modal
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const title = this.getAttribute('data-title');
+        const description = this.getAttribute('data-description');
+        const image = this.getAttribute('data-image');
+        const link = this.getAttribute('data-link');
+
+        document.getElementById('projectModalLabel').textContent = title;
+        document.getElementById('modalDescription').textContent = description;
+        document.getElementById('modalImage').src = image;
+        const modalLink = document.getElementById('modalLink');
+        modalLink.href = link;
+        modalLink.style.display = link === '#' ? 'none' : 'inline-block';
+      });
+    });
+
+    // Scroll Top
+    window.addEventListener('scroll', function() {
+      const scrollTop = document.querySelector('#scroll-top');
+      scrollTop.classList.toggle('active', window.scrollY > 100);
+    });
+
+    document.querySelector('#scroll-top').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Preloader
+    window.addEventListener('load', () => document.getElementById('preloader').style.display = 'none');
+  </script>
 </body>
 </html>
