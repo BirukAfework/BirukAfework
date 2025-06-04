@@ -29,16 +29,16 @@
 ## Tech Stack
 
 <div class="language-badges">
-  <a href="https://flutter.dev/" target="_blank">
+<!--   <a href="https://flutter.dev/" target="_blank">
     <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white&labelColor=02569B" alt="Flutter Badge" class="badge"/>
-  </a>
-  <a href="https://www.php.net/" target="_blank">
+  </a> -->
+  <a href="http://stem.du.edu.et/" target="_blank">
     <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white&labelColor=777BB4" alt="PHP Badge" class="badge"/>
   </a>
-  <a href="https://www.python.org/" target="_blank">
+  <a href="https://github.com/BirukAfework/telegrambot.git" target="_blank">
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=FFD43B&labelColor=3776AB" alt="Python Badge" class="badge"/>
   </a>
-  <a href="https://github.com/BirukAfework/Rust-Days.git" target="_blank">
+  <a href="https://github.com/BirukAfework/learn-rust.git" target="_blank">
     <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white&labelColor=000000" alt="Rust Badge" class="badge"/>
   </a>
   <a href="https://getbootstrap.com/" target="_blank">
